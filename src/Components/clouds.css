@@ -1,0 +1,45 @@
+.cloud {
+    width: 200px;
+    height: 60px;
+    background: #fff;
+    border-radius: 100px;
+    position: absolute;
+    opacity: 0.8;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+  
+.cloud:before,
+.cloud:after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 100px;
+    height: 80px;
+    border-radius: 100px;
+    opacity: 0.8;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+  
+.cloud:before {
+    top: -40px;
+    left: 10px;
+}
+  
+.cloud:after {
+    top: -30px;
+    right: 10px;
+}
+  
+  /* Animación de las nubes */
+@keyframes moveClouds {
+    0% {
+      transform: translateX(-20vw);
+    }
+    100% {
+      transform: translateX(100vw - left);
+    }
+}
+  
+.cloud {
+    animation: moveClouds 20s linear infinite;
+}

@@ -1,0 +1,26 @@
+.star {
+    width: 2px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Animación para centellear */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.star {
+    animation: twinkle 2s infinite alternate;
+}
+
+.sky {
+    height: -100vh;
+}
