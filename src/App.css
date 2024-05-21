@@ -10,9 +10,10 @@ body, html, #root {
   background: linear-gradient(
     to bottom, 
     #9ec8db 0%, 
-    #86a8e7 20%, 
+    #86a8e7 25%, 
     #feb47b 40%, 
-    #ff7e5f 60%, 
+    #ff7e5f 50%, 
+    #8C6485 60%, 
     #343D73 70%, 
     #113059 100%);
   display: flex;
@@ -21,4 +22,8 @@ body, html, #root {
   justify-content: center;
   text-align: center;
   padding: 20px;
+}
+
+.space {
+  height: 500vh;
 }

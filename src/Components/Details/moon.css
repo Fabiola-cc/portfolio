@@ -1,0 +1,17 @@
+.moon {
+    width: 100px;
+    height: 100px;
+    background-color: #f0e68c; /* Color amarillo claro */
+    border-radius: 50%;
+}
+  
+.moon::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    background-color: #ffffff00;
+    top: -50px;
+    left: -20px;
+}
+  

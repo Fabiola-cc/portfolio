@@ -1,16 +1,13 @@
 import './App.css';
-import Stars from './Components/backStars';
-import Cloud from './Components/clouds';
+//import Sky from './Components/sky';
+//import Navbar from './Components/navBar';
 
 const App = () => {  
   return (
-    <div className="background">
-      <h1>Bienvenido</h1>
-      <div style={{ height: '500vh' }}>
-        <p>.</p>
-      </div>
-      <Cloud />
-      <Stars />
+    <div className='background'>
+      
+      
+
     </div>
   );
 };
