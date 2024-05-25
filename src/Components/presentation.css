@@ -1,0 +1,29 @@
+.begin {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    justify-content: center;
+    width: 90vw;
+    color: white;
+    height: 100vh;
+}
+
+.begin *{
+    margin: 1%;
+}
+
+.begin h4 {
+    width: 30vw;
+    align-self: end;
+}
+
+@media (max-width: 768px) {
+    .begin {
+        text-align: center;
+    }
+
+    .begin h4 {
+        width: 80vw;
+        align-self: center;
+    }
+}

@@ -1,17 +1,11 @@
-.moon {
-    width: 100px;
-    height: 100px;
-    background-color: #f0e68c; /* Color amarillo claro */
-    border-radius: 50%;
+.moon{
+    position:absolute;
+    margin:auto;
+    top: 310vh;
+    right: 20vw;
+    background-color:transparent;
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    box-shadow:25px 10px 0 0 #f0e68c8f;
 }
-  
-.moon::before {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 200px;
-    background-color: #ffffff00;
-    top: -50px;
-    left: -20px;
-}
-  
