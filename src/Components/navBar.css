@@ -38,6 +38,10 @@
   background-color: white;
   margin: 4px;
 }
+
+.navbar-item.active {
+  border-bottom: 2px solid #ffffff;
+}
   
 /* Media queries for responsive design */
 @media (max-width: 768px) {

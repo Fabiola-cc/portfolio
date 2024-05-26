@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import './App.css';
 import Presentation from './Components/presentation';
 import Sky from './Components/Details/sky';
@@ -6,15 +7,20 @@ import Proyects from './Components/proyects';
 import About from './Components/about';
 import Contacto from './Components/contact';
 
-const App = () => {  
+const App = () => {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <div className='background'>
-      <Navbar />
+      <Navbar homeRef={homeRef} aboutRef={aboutRef} projectsRef={projectsRef} contactRef={contactRef} />
       <Sky />
-      <Presentation/>
-      <About />
-      <Proyects />
-      <Contacto />
+      <div ref={homeRef}><Presentation /></div> {/* HOME */}
+      <div ref={aboutRef}><About /></div>
+      <div ref={projectsRef}><Proyects /></div>
+      <div ref={contactRef}><Contacto /></div>
     </div>
   );
 };
