@@ -5,6 +5,7 @@ import './navBar.css';
 const Navbar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -33,6 +34,7 @@ const Navbar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
         break;
       }
     }
+    setIsScrolled(window.scrollY > 50);
   };
 
   useEffect(() => {
@@ -42,10 +44,10 @@ const Navbar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
     return () => {
       window.removeEventListener('scroll', handleScrollEvent);
     };
-  }, );
+  },);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-brand">
         <a
           href="#"

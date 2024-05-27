@@ -1,13 +1,17 @@
 .navbar {
   display: flex;
-  width: 95vw;
+  width: 97vw;
   position: fixed;
-  top: 1%;
+  top: 0%;
   justify-content: space-between;
   align-items: center;
-  padding: 1%;
+  padding: 1% 5vw;
   background-color: transparent;
   color: white;
+}
+
+.navbar.scrolled{
+  background-color: #9ec8db8e;
 }
 
 .navbar-brand a {
