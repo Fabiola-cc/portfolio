@@ -3,7 +3,7 @@ import './App.css';
 import Presentation from './Components/presentation';
 import Sky from './Components/Details/sky';
 import Navbar from './Components/navBar';
-import Proyects from './Components/proyects';
+import Proyects from './Components/projects';
 import About from './Components/about';
 import Contacto from './Components/contact';
 

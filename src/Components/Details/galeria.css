@@ -1,0 +1,20 @@
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 16px;
+    padding: 16px;
+}
+  
+.photo-item {
+    flex: 1 1 calc(33.333% - 32px); /* Ajuste para tres columnas con espacio */
+    box-sizing: border-box;
+}
+  
+.photo-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
