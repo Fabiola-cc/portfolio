@@ -20,8 +20,8 @@ const Navbar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
   const handleScrollEvent = () => {
     const sections = [
       { ref: homeRef, name: 'home' },
-      { ref: aboutRef, name: 'about-me' },
       { ref: projectsRef, name: 'projects' },
+      { ref: aboutRef, name: 'about-me' },
       { ref: contactRef, name: 'contact' },
     ];
 
@@ -67,17 +67,17 @@ const Navbar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
         </a>
         <a
           href="#"
-          className={`navbar-item ${activeSection === 'about-me' ? 'active' : ''}`}
-          onClick={(e) => handleScroll(aboutRef, e)}
-        >
-          About Me
-        </a>
-        <a
-          href="#"
           className={`navbar-item ${activeSection === 'projects' ? 'active' : ''}`}
           onClick={(e) => handleScroll(projectsRef, e)}
         >
           Projects
+        </a>
+        <a
+          href="#"
+          className={`navbar-item ${activeSection === 'about-me' ? 'active' : ''}`}
+          onClick={(e) => handleScroll(aboutRef, e)}
+        >
+          About Me
         </a>
         <a
           href="#"

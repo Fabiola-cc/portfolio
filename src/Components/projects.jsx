@@ -1,4 +1,7 @@
+import { useState } from 'react';
+import Tools from './Details/tools';
 import './projects.css';
+import Popup from './Details/project-data';
 
 const projectsData = [
   {
@@ -16,35 +19,62 @@ const projectsData = [
     link: 'https://calculator-22787.netlify.app/',
     github: 'https://github.com/Fabiola-cc/calculator_testing',
   },
-  // Añade más proyectos según sea necesario
+  {
+    title: 'Image CSS',
+    description: 'Un pequeño ejercicio que muestra habilidades con css, mínima animación y uso de posicionamientos.',
+    image: '/src/assets/calculadora.png',
+    link: 'https://tiburoncin.lat/22787/Image_CSS/structure.html',
+    github: 'https://github.com/Fabiola-cc/Image_CSS',
+  },
 ];
 
 const Projects = () => {
-  return (
-    <div className="projects">
-      <h2 className="projects-title">Proyectos Trabajados</h2>
-      <div className="projects-grid">
-        {projectsData.map((project, index) => (
-          <div key={index} className="project-card">
-            <img src={project.image} alt={project.title} className="project-image" />
-            <div className="project-content">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              <p className="project-description">{project.extra}</p>
-              <div className="project-links">
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                  <img src='/src/assets/external-link.png' alt="External Link" />
-                </a>
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
-                  <img src='/src/assets/github-mark.svg' alt="GitHub Link" />
-                </a>
-              </div>
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openPopup = (project) => {
+      setSelectedProject(project);
+      setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+      setIsPopupOpen(false);
+      setSelectedProject(null);
+  };
+
+    return (
+        <section id="projects">
+            <h2>Proyectos en los que he trabajado</h2>
+            <div className="project-container">
+                <div className='columnProy'>
+                  <div className="rowProy">
+                    <video controls autoPlay loop muted playsInline
+                    onClick={() => openPopup(projectsData[2])}>
+                        <source src="/src/assets/cssPato.mp4" type="video/mp4" />
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <img src="/src/assets/Blog.png" alt="Blog" 
+                    onClick={() => openPopup(projectsData[0])}/>
+                    <img src="/src/assets/calculadora.png" alt="Calculadora" 
+                    onClick={() => openPopup(projectsData[1])}/>
+                  </div>
+                  <Tools />
+                </div>
+                {selectedProject && (
+                    <Popup
+                        isOpen={isPopupOpen}
+                        onClose={closePopup}
+                        title={selectedProject.title}
+                        description={selectedProject.description}
+                        extra={selectedProject.extra}
+                        image={selectedProject.image}
+                        link={selectedProject.link}
+                        github={selectedProject.github}
+                    />
+                )}
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+        </section>
+    );
 };
 
 export default Projects;
