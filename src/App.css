@@ -5,9 +5,13 @@ body, html, #root {
   width: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .background {
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   background: linear-gradient(
     to bottom, 
     #9ec8db 0%, 
@@ -25,5 +29,5 @@ body, html, #root {
 }
 
 .space {
-  height: 500vh;
+  height: fit-content;
 }

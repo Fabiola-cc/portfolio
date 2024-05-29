@@ -24,11 +24,11 @@ const Tools = () => {
                 </div>
                 <div className="tool">
                     <img src={reactIcon} alt="React" />
-                    <p>JavaScript</p>
+                    <p>React</p>
                 </div>
                 <div className="tool">
                     <img src={viteIcon} alt="Vite" />
-                    <p>JavaScript</p>
+                    <p>Vite</p>
                 </div>
             </div>
         </section>

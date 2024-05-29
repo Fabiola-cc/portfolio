@@ -48,15 +48,27 @@ const Projects = () => {
             <div className="project-container">
                 <div className='columnProy'>
                   <div className="rowProy">
-                    <video controls autoPlay loop muted playsInline
-                    onClick={() => openPopup(projectsData[2])}>
+                    <div className="project-card" onClick={() => openPopup(projectsData[2])}>
+                      <video controls autoPlay loop muted playsInline>
                         <source src="/src/assets/cssPato.mp4" type="video/mp4" />
                         Tu navegador no soporta el elemento de video.
-                    </video>
-                    <img src="/src/assets/Blog.png" alt="Blog" 
-                    onClick={() => openPopup(projectsData[0])}/>
-                    <img src="/src/assets/calculadora.png" alt="Calculadora" 
-                    onClick={() => openPopup(projectsData[1])}/>
+                      </video>
+                      <div className="overlay">
+                        <div className="overlay-text">Más información</div>
+                      </div>
+                    </div>
+                    <div className="project-card" onClick={() => openPopup(projectsData[0])}>
+                      <img src="/src/assets/Blog.png" alt="Blog" />
+                      <div className="overlay">
+                        <div className="overlay-text">Más información</div>
+                      </div>
+                    </div>
+                    <div className="project-card" onClick={() => openPopup(projectsData[1])}>
+                      <img src="/src/assets/calculadora.png" alt="Calculadora" />
+                      <div className="overlay">
+                        <div className="overlay-text">Más información</div>
+                      </div>
+                    </div>
                   </div>
                   <Tools />
                 </div>

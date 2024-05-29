@@ -1,130 +1,175 @@
-/* Estilos base */
 .projects-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 h2 {
-    text-align: center;
-    margin-top: 20px;
-    color: #ffffff;
-    width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  color: #ffffff;
+  width: 100%;
 }
 
 #projects {
-    min-height: 100vh;
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px; /* Añadido padding para que no toque los bordes */
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 .project-container, .tools-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: top;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: top;
 }
 
 .project-container img, .tools-container .tool img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0%;
 }
 
 .project-container video {
-    padding: 0%;
-    height: 100%;
-    cursor: pointer;
+  margin: 0%;
 }
 
 .tool {
-    text-align: center;
+  text-align: center;
 }
 
 .tool img {
-    width: 50px;
-    height: auto;
+  width: 50px;
+  height: auto;
 }
 
 .tool p {
-    margin-top: 10px;
-    font-weight: bold;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .rowProy {
-    height: 50vh;
-    display: flex;
-    padding: 1rem;
-    align-items: center;
+  height: 50vh;
+  display: flex;
+  gap: 2%;
+  align-items: center;
+  justify-content: start;
 }
 
-.rowProy img {
-    cursor: pointer;
-    height: 100%;
-    padding: 1%;
+.rowProy img, .rowProy video {
+  cursor: pointer;
+  height: 100%;
+  position: relative;
 }
 
 .columnProy {
-    display: flex;
-    flex-direction: column;
-    padding: 1%;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.project-card {
+    height: 100%;
+    width: fit-content;
+    position: relative;
+    cursor: pointer;
+}
+
+.project-card img, .project-card video {
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover img, .project-card:hover video {
+  opacity: 0.5;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /* Media Queries */
 
 /* Tablets y pantallas pequeñas */
 @media (max-width: 915px) {
-    .projects-title {
-        font-size: 2rem;
-    }
+  .projects-title {
+    font-size: 2rem;
+  }
 
-    .project-container, .tools-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .rowProy {
-        height: auto;
-        flex-direction: column;
-    }
+  .tools-container {
+    flex-wrap: wrap-reverse;
+  }
 
-    .rowProy img, video {
-        width: 80%;
-        height: auto;
-    }
+  .rowProy {
+    height: auto;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .rowProy img, video {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
 }
 
 /* Teléfonos móviles */
 @media (max-width: 480px) {
-    .projects-title {
-        font-size: 1.5rem;
-    }
+  .projects-title {
+    font-size: 1.5rem;
+  }
 
-    .projects-grid {
-        gap: 10px;
-    }
+  .projects-grid {
+    gap: 10px;
+  }
 
-    .rowProy {
-        padding: 0.5rem;
-    }
+  .rowProy {
+    padding: 0.5rem;
+  }
 
-    .rowProy img, video {
-        width: 80%;
-    }
+  .project-card img, video {
+    width: 100%;
+  }
 
-    .tool img {
-        width: 40px;
-    }
+  .tool img {
+    width: 40px;
+  }
 
-    .tool p {
-        font-size: 0.9rem;
-    }
+  .tool p {
+    font-size: 0.9rem;
+  }
 }

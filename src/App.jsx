@@ -15,12 +15,12 @@ const App = () => {
 
   return (
     <div className='background'>
-      <Navbar homeRef={homeRef} aboutRef={aboutRef} projectsRef={projectsRef} contactRef={contactRef} />
       <Sky />
       <div ref={homeRef}><Presentation /></div> {/* HOME */}
       <div ref={projectsRef}><Proyects /></div>
       <div ref={aboutRef}><About /></div>
       <div ref={contactRef}><Contacto /></div>
+      <Navbar homeRef={homeRef} aboutRef={aboutRef} projectsRef={projectsRef} contactRef={contactRef} />
     </div>
   );
 };
