@@ -1,4 +1,5 @@
 import './about.css';
+import picture from '../assets/me.jpg';
 
 const About = () => {
 
@@ -7,7 +8,7 @@ const About = () => {
       <div className='content'>
         <div className='image-container'>
           <h3>Esta soy yo:</h3>
-          <img className='picture' src='../assets/me.jpg' alt='Me, myself and I' />
+          <img className='picture' src={picture} alt='Me, myself and I' />
         </div>
         <div className='text'>
           <p>Fabiola Alejandra Contreras Colindres, pero la mayoría me dice Fabi. Actualmente estoy en tercer año de Ingeniería en Ciencia de la Computación y Tecnologías de la Información en la Universidad del Valle de Guatemala .</p>

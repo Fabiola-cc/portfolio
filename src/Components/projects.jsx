@@ -3,6 +3,10 @@ import Tools from './Details/tools';
 import './projects.css';
 import Popup from './Details/project-data';
 
+import blog from '../assets/Blog.png';
+import pato from '../assets/cssPato.mp4';
+import calculate from '../assets/calculadora.png';
+
 const projectsData = [
   {
     title: 'Blog de lectura',
@@ -50,7 +54,7 @@ const Projects = () => {
                   <div className="rowProy">
                     <div className="project-card" onClick={() => openPopup(projectsData[2])}>
                       <video controls autoPlay loop muted playsInline>
-                        <source src="../assets/cssPato.mp4" type="video/mp4" />
+                        <source src={pato} type="video/mp4" />
                         Tu navegador no soporta el elemento de video.
                       </video>
                       <div className="overlay">
@@ -58,13 +62,13 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className="project-card" onClick={() => openPopup(projectsData[0])}>
-                      <img src="../assets/Blog.png" alt="Blog" />
+                      <img src={blog} alt="Blog" />
                       <div className="overlay">
                         <div className="overlay-text">Más información</div>
                       </div>
                     </div>
                     <div className="project-card" onClick={() => openPopup(projectsData[1])}>
-                      <img src="../assets/calculadora.png" alt="Calculadora" />
+                      <img src={calculate} alt="Calculadora" />
                       <div className="overlay">
                         <div className="overlay-text">Más información</div>
                       </div>
