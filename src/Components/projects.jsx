@@ -8,21 +8,21 @@ const projectsData = [
     title: 'Blog de lectura',
     description: 'Rincón de lectura es un pequeño blog donde se comentan diversos libros y se muestra su sinópsis para atraer a los lectores.',
     extra: 'Por razones prácticas tiene un acceso limitado pero puedes utilizar el usuario: admin y contraseña: admin_blog_75',
-    image: '/src/assets/Blog.png',
+    image: '../assets/Blog.png',
     link: 'https://rincondelectura.netlify.app/',
     github: 'https://github.com/Fabiola-cc/Blog-Proyect',
   },
   {
     title: 'Calculadora',
     description: 'Un ejercicio común, en este caso enfocado en trabajar el uso de vitests y storybooks',
-    image: '/src/assets/calculadora.png',
+    image: '../assets/calculadora.png',
     link: 'https://calculator-22787.netlify.app/',
     github: 'https://github.com/Fabiola-cc/calculator_testing',
   },
   {
     title: 'Image CSS',
     description: 'Un pequeño ejercicio que muestra habilidades con css, mínima animación y uso de posicionamientos.',
-    image: '/src/assets/calculadora.png',
+    image: '../assets/calculadora.png',
     link: 'https://tiburoncin.lat/22787/Image_CSS/structure.html',
     github: 'https://github.com/Fabiola-cc/Image_CSS',
   },
@@ -50,7 +50,7 @@ const Projects = () => {
                   <div className="rowProy">
                     <div className="project-card" onClick={() => openPopup(projectsData[2])}>
                       <video controls autoPlay loop muted playsInline>
-                        <source src="/src/assets/cssPato.mp4" type="video/mp4" />
+                        <source src="../assets/cssPato.mp4" type="video/mp4" />
                         Tu navegador no soporta el elemento de video.
                       </video>
                       <div className="overlay">
@@ -58,13 +58,13 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className="project-card" onClick={() => openPopup(projectsData[0])}>
-                      <img src="/src/assets/Blog.png" alt="Blog" />
+                      <img src="../assets/Blog.png" alt="Blog" />
                       <div className="overlay">
                         <div className="overlay-text">Más información</div>
                       </div>
                     </div>
                     <div className="project-card" onClick={() => openPopup(projectsData[1])}>
-                      <img src="/src/assets/calculadora.png" alt="Calculadora" />
+                      <img src="../assets/calculadora.png" alt="Calculadora" />
                       <div className="overlay">
                         <div className="overlay-text">Más información</div>
                       </div>

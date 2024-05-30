@@ -3,9 +3,9 @@ import './backStars.css'
 const generateStars = (numStars) => {
     const stars = [];
     const backgroundElement = document.querySelector('.background');
-
+    
     // Obtener la altura del elemento .background
-    const backgroundHeight = backgroundElement.scrollHeight;
+    const backgroundHeight = backgroundElement.clientHeight;
 
     // Calcular la posición vertical de las estrellas (por ejemplo, el 70% del penúltimo color)
     const starsTop = backgroundHeight * 0.7;
