@@ -72,6 +72,10 @@
   }
   
   @media (max-width: 768px) {
+    .contact {
+      padding: 0%;
+    }
+
     .socials {
       width: 80vw;
     }

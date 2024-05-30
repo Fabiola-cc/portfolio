@@ -49,15 +49,20 @@
   
 /* Media queries for responsive design */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 1%;
+    position: fixed;
+  }
+
  .navbar-menu {
     display: none;
     flex-direction: column;
-    width: 100%;
-    background-color: #62929e;
+    width: 98%;
+    background-color: #9ec8db;
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 0;
-    padding: 1rem;
+    padding: 1%;
  }
   
  .navbar-menu.is-active {

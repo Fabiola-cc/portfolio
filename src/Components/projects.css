@@ -120,7 +120,11 @@ h2 {
 /* Media Queries */
 
 /* Tablets y pantallas pequeñas */
-@media (max-width: 915px) {
+@media (max-width: 988px) {
+  #projects {
+    padding: 0%;
+  }
+
   .projects-title {
     font-size: 2rem;
   }
@@ -140,6 +144,10 @@ h2 {
     gap: 3px;
   }
 
+  .project-card {
+    width: 80%;
+  }
+
   .rowProy img, video {
     width: 80%;
     height: auto;
@@ -149,6 +157,10 @@ h2 {
 
 /* Teléfonos móviles */
 @media (max-width: 480px) {
+  #projects {
+    padding: 0%;
+  }
+
   .projects-title {
     font-size: 1.5rem;
   }
@@ -161,8 +173,8 @@ h2 {
     padding: 0.5rem;
   }
 
-  .project-card img, video {
-    width: 100%;
+  .project-card {
+    width: 80%;
   }
 
   .tool img {

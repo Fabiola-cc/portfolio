@@ -44,3 +44,36 @@
 .cloud {
     animation: moveClouds 20s linear infinite;
 }
+
+.cloud-1 {
+  top: 15%;
+  left: 10%;
+}
+.cloud-2 {
+    top: 35%;
+    left: 50%;
+}
+.cloud-3 {
+    top: 70%;
+    left: 80%;
+}
+
+@media (max-width: 768px) {
+  .cloud {
+    animation: none;
+  }
+  
+  .cloud-1 {
+    top: 10%;
+    left: 5%;
+  }
+  .cloud-2 {
+      top: 33%;
+      left: 50%;
+  }
+  .cloud-3 {
+      top: 70%;
+      left: 28%;
+  }
+
+}
