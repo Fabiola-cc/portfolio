@@ -15,6 +15,7 @@ const projectsData = [
     tools: ['React', 'Vite', 'NodeJS', 'CSS', 'HTML'],
     link: 'https://rincondelectura.netlify.app/',
     github: 'https://github.com/Fabiola-cc/Blog-Proyect',
+    image: blog
   },
   {
     title: 'Calculadora',
@@ -22,6 +23,7 @@ const projectsData = [
     tools: ['React', 'Vite', 'NodeJS', 'CSS', 'HTML', 'Vitest', 'Storybook'],
     link: 'https://calculator-22787.netlify.app/',
     github: 'https://github.com/Fabiola-cc/calculator_testing',
+    image: calculate
   },
   {
     title: 'Image CSS',
@@ -29,65 +31,81 @@ const projectsData = [
     tools: ['CSS', 'HTML'],
     link: 'https://tiburoncin.lat/22787/Image_CSS/structure.html',
     github: 'https://github.com/Fabiola-cc/Image_CSS',
+    image: pato
   },
 ];
 
 const Projects = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(projectsData[0]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const openPopup = (project) => {
-      setSelectedProject(project);
-      setIsPopupOpen(true);
+  const openPopup = () => {
+    setIsPopupOpen(true);
   };
 
   const closePopup = () => {
-      setIsPopupOpen(false);
-      setSelectedProject(null);
+    setIsPopupOpen(false);
   };
 
-    return (
-        <section id="projects">
-            <h2>Proyectos en los que he trabajado</h2>
-            <div className="project-container">
-                <div className='columnProy'>
-                  <div className="rowProy">
-                    <div className="project-card" onClick={() => openPopup(projectsData[2])}>
-                      <img src={pato} alt="CssImage" />
-                      <div className="overlay">
-                        <div className="overlay-text">Más información</div>
-                      </div>
-                    </div>
-                    <div className="project-card" onClick={() => openPopup(projectsData[0])}>
-                      <img src={blog} alt="Blog" />
-                      <div className="overlay">
-                        <div className="overlay-text">Más información</div>
-                      </div>
-                    </div>
-                    <div className="project-card" onClick={() => openPopup(projectsData[1])}>
-                      <img src={calculate} alt="Calculadora" />
-                      <div className="overlay">
-                        <div className="overlay-text">Más información</div>
-                      </div>
-                    </div>
-                  </div>
-                  <Tools />
+  const handleNext = () => {
+    const nextIndex = (currentIndex + 1) % projectsData.length;
+    setCurrentIndex(nextIndex);
+    setSelectedProject(projectsData[nextIndex]);
+    console.log(selectedProject)
+  };
+
+  const handlePrevious = () => {
+    const prevIndex = (currentIndex - 1 + projectsData.length) % projectsData.length;
+    setCurrentIndex(prevIndex);
+    setSelectedProject(projectsData[prevIndex]);
+  };
+
+  return (
+    <section id="projects">
+      <div className="project-container">
+        <div className='addTitle'>
+          <h2>Algunos de mis proyectos</h2>
+          <div className='columnProy'>
+            <div className="project-card">
+              <img src={selectedProject.image} alt={selectedProject.title} onClick={openPopup} />
+              <div className="project-details">
+                <h3>{selectedProject.title}</h3>
+                <div className='Ptools'>
+                  {selectedProject.tools.map((tool, index) => (
+                    <span key={index} className='tool'>
+                      {tool}
+                    </span>
+                  ))}
                 </div>
-                {selectedProject && (
-                    <Popup
-                        isOpen={isPopupOpen}
-                        onClose={closePopup}
-                        title={selectedProject.title}
-                        description={selectedProject.description}
-                        extra={selectedProject.extra}
-                        tools={selectedProject.tools}
-                        link={selectedProject.link}
-                        github={selectedProject.github}
-                    />
-                )}
+                <button onClick={openPopup}>Descripción</button>
+              </div>
             </div>
-        </section>
-    );
+            <div className="navigation-buttons">
+              <button onClick={handlePrevious}>←</button>
+              <button onClick={handleNext}>→</button>
+            </div>
+          </div>
+        </div>
+        <div className='addTitle'>
+          <h2>Herramientas utilizadas</h2>
+          <Tools />
+        </div>
+      </div>
+      {selectedProject && (
+        <Popup
+          isOpen={isPopupOpen}
+          onClose={closePopup}
+          title={selectedProject.title}
+          description={selectedProject.description}
+          extra={selectedProject.extra}
+          tools={selectedProject.tools}
+          link={selectedProject.link}
+          github={selectedProject.github}
+        />
+      )}
+    </section>
+  );
 };
 
 export default Projects;

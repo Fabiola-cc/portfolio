@@ -8,6 +8,7 @@
   padding: 1% 5vw;
   background-color: transparent;
   color: white;
+  z-index: 6;
 }
 
 .navbar.scrolled{

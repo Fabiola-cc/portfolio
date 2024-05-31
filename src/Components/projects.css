@@ -1,183 +1,136 @@
-.projects-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-h2 {
-  text-align: center;
-  margin-top: 20px;
-  color: #ffffff;
-  width: 100%;
-}
-
 #projects {
   min-height: 100vh;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
+  text-align: left;
+  width: 90vw;
 }
 
-.project-container, .tools-container {
+.project-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: top;
-}
-
-.project-container img, .tools-container .tool img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0%;
-}
-
-.tool {
-  text-align: center;
-}
-
-.tool img {
-  width: 50px;
-  height: auto;
-}
-
-.tool p {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.rowProy {
-  height: 50vh;
-  display: flex;
-  gap: 2%;
-  align-items: center;
-  justify-content: start;
-}
-
-.rowProy img {
-  cursor: pointer;
-  height: 100%;
-  position: relative;
+  justify-content: space-evenly;
 }
 
 .columnProy {
   display: flex;
   flex-direction: column;
-  padding: 1%;
+  align-items: center;
+  width: 20vw;
+  height: 90vh;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  padding: 13px;
+  position: relative;
+  z-index: 1; /* Asegurando que la columna esté en una capa visible */
+}
+
+.project-container button {
+  padding: 2%;
+  text-align: center;
+  background-color: white;
 }
 
 .project-card {
-    height: 100%;
-    width: fit-content;
-    position: relative;
-    cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 300px; /* Ajusta según sea necesario */
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .project-card img {
-  transition: opacity 0.3s ease;
-}
-
-.project-card:hover img {
-  opacity: 0.5;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0%;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  object-fit: scale-down;
+  border-radius: 5px;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-details .Ptools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.project-details .Ptools .tool {
+  background: #cbd7f7;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2; /* Asegurando que los botones estén en una capa visible */
+}
+
+.navigation-buttons button {
+  background: #61acac; /* Color de botón */
   color: white;
+  width: 10%;
+  border: none;
+  padding: 1%;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 3; /* Asegurando que los botones estén en una capa visible */
+}
+
+.navigation-buttons button:hover {
+  background: #5889a0;
+  border: none;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  z-index: 4; /* Asegurando que el popup esté en una capa superior */
 }
 
-.project-card:hover .overlay {
-  opacity: 1;
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 5; /* Asegurando que el contenido del popup esté en la capa más alta */
 }
 
-.overlay-text {
-  font-size: 1.5rem;
-  font-weight: bold;
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-/* Media Queries */
-
-/* Tablets y pantallas pequeñas */
-@media (max-width: 988px) {
-  #projects {
-    padding: 0%;
-  }
-
-  .projects-title {
-    font-size: 2rem;
-  }
-
-  .project-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tools-container {
-    flex-wrap: wrap-reverse;
-  }
-
-  .rowProy {
-    height: auto;
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  .project-card {
-    width: 80%;
-  }
-
-  .rowProy img {
-    width: 80%;
-    height: auto;
-    margin: 0 auto;
-  }
+.project-detail .Ptools {
+  margin-bottom: 10px;
 }
 
-/* Teléfonos móviles */
-@media (max-width: 480px) {
-  #projects {
-    padding: 0%;
-  }
-
-  .projects-title {
-    font-size: 1.5rem;
-  }
-
-  .projects-grid {
-    gap: 10px;
-  }
-
-  .rowProy {
-    padding: 0.5rem;
-  }
-
-  .project-card {
-    width: 80%;
-  }
-
-  .tool img {
-    width: 40px;
-  }
-
-  .tool p {
-    font-size: 0.9rem;
-  }
+.project-detail .Ptools .tool {
+  background: #e0e0e0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
 }

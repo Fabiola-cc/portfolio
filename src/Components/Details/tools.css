@@ -1,0 +1,39 @@
+#tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60vw;
+}
+
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tool img {
+    width: 50px;
+    height: 50px;
+}
+
+.frontend, .backend, .database, .others {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-width: 3px;
+    border-style: solid;
+    border-color: aliceblue;
+    border-radius: 7px;
+}
+
+.frontend h4, .backend h4, .database h4, .others h4 {
+    grid-column: 1 / span 2; /* Ocupa las dos columnas */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 10px; /* Ajusta el espacio entre el título y las herramientas */
+    color: white;
+}
