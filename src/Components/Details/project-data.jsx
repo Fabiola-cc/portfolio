@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import './project-data.css';
 
-const Popup = ({ isOpen, onClose, title, description, extra, image, link, github }) => {
+const Popup = ({ isOpen, onClose, title, description, extra, tools, link, github }) => {
     if (!isOpen) return null;
 
     return (
@@ -10,6 +10,13 @@ const Popup = ({ isOpen, onClose, title, description, extra, image, link, github
                 <button className="popup-close" onClick={onClose}>X</button>
                 <div className="project-detail">
                     <h3>{title}</h3>
+                    <div className='Ptools'>
+                        {tools.map((tool, index) => (
+                            <span key={index} className='tool'>
+                                {tool}
+                            </span>
+                        ))}
+                    </div>
                     <p>{description}</p>
                     <p>{extra}</p>
                     <div className='buttonArea'>
@@ -32,7 +39,7 @@ Popup.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     extra: PropTypes.string,
-    image: PropTypes.string.isRequired,
+    tools: PropTypes.array.isRequired,
     link: PropTypes.string.isRequired,
     github: PropTypes.string.isRequired,
 };

@@ -4,7 +4,7 @@ import './projects.css';
 import Popup from './Details/project-data';
 
 import blog from '../assets/Blog.png';
-import pato from '../assets/cssPato.mp4';
+import pato from '../assets/gifPato.gif';
 import calculate from '../assets/calculadora.png';
 
 const projectsData = [
@@ -12,21 +12,21 @@ const projectsData = [
     title: 'Blog de lectura',
     description: 'Rincón de lectura es un pequeño blog donde se comentan diversos libros y se muestra su sinópsis para atraer a los lectores.',
     extra: 'Por razones prácticas tiene un acceso limitado pero puedes utilizar el usuario: admin y contraseña: admin_blog_75',
-    image: '../assets/Blog.png',
+    tools: ['React', 'Vite', 'NodeJS', 'CSS', 'HTML'],
     link: 'https://rincondelectura.netlify.app/',
     github: 'https://github.com/Fabiola-cc/Blog-Proyect',
   },
   {
     title: 'Calculadora',
     description: 'Un ejercicio común, en este caso enfocado en trabajar el uso de vitests y storybooks',
-    image: '../assets/calculadora.png',
+    tools: ['React', 'Vite', 'NodeJS', 'CSS', 'HTML', 'Vitest', 'Storybook'],
     link: 'https://calculator-22787.netlify.app/',
     github: 'https://github.com/Fabiola-cc/calculator_testing',
   },
   {
     title: 'Image CSS',
     description: 'Un pequeño ejercicio que muestra habilidades con css, mínima animación y uso de posicionamientos.',
-    image: '../assets/calculadora.png',
+    tools: ['CSS', 'HTML'],
     link: 'https://tiburoncin.lat/22787/Image_CSS/structure.html',
     github: 'https://github.com/Fabiola-cc/Image_CSS',
   },
@@ -53,10 +53,7 @@ const Projects = () => {
                 <div className='columnProy'>
                   <div className="rowProy">
                     <div className="project-card" onClick={() => openPopup(projectsData[2])}>
-                      <video controls autoPlay loop muted playsInline>
-                        <source src={pato} type="video/mp4" />
-                        Tu navegador no soporta el elemento de video.
-                      </video>
+                      <img src={pato} alt="CssImage" />
                       <div className="overlay">
                         <div className="overlay-text">Más información</div>
                       </div>
@@ -83,7 +80,7 @@ const Projects = () => {
                         title={selectedProject.title}
                         description={selectedProject.description}
                         extra={selectedProject.extra}
-                        image={selectedProject.image}
+                        tools={selectedProject.tools}
                         link={selectedProject.link}
                         github={selectedProject.github}
                     />

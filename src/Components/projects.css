@@ -39,10 +39,6 @@ h2 {
   margin: 0%;
 }
 
-.project-container video {
-  margin: 0%;
-}
-
 .tool {
   text-align: center;
 }
@@ -65,7 +61,7 @@ h2 {
   justify-content: start;
 }
 
-.rowProy img, .rowProy video {
+.rowProy img {
   cursor: pointer;
   height: 100%;
   position: relative;
@@ -84,11 +80,11 @@ h2 {
     cursor: pointer;
 }
 
-.project-card img, .project-card video {
+.project-card img {
   transition: opacity 0.3s ease;
 }
 
-.project-card:hover img, .project-card:hover video {
+.project-card:hover img {
   opacity: 0.5;
 }
 
@@ -148,7 +144,7 @@ h2 {
     width: 80%;
   }
 
-  .rowProy img, video {
+  .rowProy img {
     width: 80%;
     height: auto;
     margin: 0 auto;

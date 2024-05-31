@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .popup-content {
@@ -29,6 +30,15 @@
     cursor: pointer;
 }
 
+.Ptools .tool {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 .buttonArea {
     display: flex;
     align-items: center;
@@ -37,19 +47,21 @@
     justify-content: space-around;
 }
 
-.buttonArea img {
-    width: 50px;
-}
-
 .project-detail {
     text-align: center;
 }
 
 .project-detail img {
     max-width: 50%;
+    width: 50px;
     height: auto;
     margin: 20px 0;
     object-fit: cover;
+}
+
+.project-detail a {
+    display: flex;
+    justify-content: center;
 }
 
 .project-detail a:hover {
